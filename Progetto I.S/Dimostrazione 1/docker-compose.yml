@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  app_vulnerabile:
+    build:
+      context: .
+      dockerfile: Dockerfile.vulnerable
+    ports:
+      - "5001:5000"
+    container_name: security_vulnerable_app
+
+  app_sicura:
+    build:
+      context: .
+      dockerfile: Dockerfile.secure
+    ports:
+      - "5002:5000"
+    container_name: security_secure_app

@@ -1,0 +1,8 @@
+FROM python:3.10-slim
+WORKDIR /app
+# Installiamo Flask
+RUN pip install --no-cache-dir flask
+# Copiamo il codice
+COPY app/app_vulnerable.py .
+EXPOSE 5000
+CMD ["python", "app_vulnerable.py"]
